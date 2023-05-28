@@ -1,0 +1,2 @@
+/* add padding to VTE based terminals */
+VteTerminal, vte-terminal { padding: 12px; }

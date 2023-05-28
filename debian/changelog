@@ -1,0 +1,110 @@
+hatchery-skel (0.7.5) pecos; urgency=medium
+
+  * Rebuild for pecos. 
+
+ -- Will Elliott <troutcobbler@gmail.com>  Sun, 28 May 2023 01:49:54 -0600
+
+hatchery-skel (0.7.4) steelhead; urgency=medium
+
+  * Added goober config file. 
+
+ -- Will Elliott <troutcobbler@gmail.com>  Sun, 30 Apr 2023 19:42:26 -0600
+
+hatchery-skel (0.7.3) steelhead; urgency=medium
+
+  * Added goober! 
+
+ -- Will Elliott <troutcobbler@gmail.com>  Wed, 26 Apr 2023 23:12:44 -0600
+
+hatchery-skel (0.7.2) steelhead; urgency=medium
+
+  * Added keyboard layout script for sway.
+
+ -- Will Elliott <troutcobbler@gmail.com>  Sat, 08 Apr 2023 02:15:38 -0600
+
+hatchery-skel (0.7.1) steelhead; urgency=medium
+
+  * Updated conky.conf
+
+ -- Will Elliott <troutcobbler@gmail.com>  Wed, 05 Apr 2023 19:48:43 -0600
+
+hatchery-skel (0.7.0) steelhead; urgency=medium
+
+  * Swapped herbstluftwm for dk & added sway.
+
+ -- Will Elliott <troutcobbler@gmail.com>  Wed, 05 Apr 2023 16:00:36 -0600
+
+hatchery-skel (0.6.4) steelhead; urgency=medium
+
+  * Improved eww workspaces script.
+
+ -- Will Elliott <troutcobbler@gmail.com>  Mon, 20 Mar 2023 16:53:26 -0600
+
+hatchery-skel (0.6.3) steelhead; urgency=medium
+
+  * Fixed eww logout_cmd & added conkywonky.sh to .local/bin 
+
+ -- Will Elliott <troutcobbler@gmail.com>  Wed, 01 Mar 2023 20:16:46 -0700
+
+hatchery-skel (0.6.2) steelhead; urgency=medium
+
+  * Switched from bspwm to herbstluftwm. 
+
+ -- Will Elliott <troutcobbler@gmail.com>  Wed, 01 Mar 2023 19:00:14 -0700
+
+hatchery-skel (0.6.1) steelhead; urgency=medium
+
+  * Updated configs
+  * Switched to native format for easier packaging.
+
+ -- Will Elliott <troutcobbler@gmail.com>  Tue, 28 Feb 2023 18:35:34 -0700
+
+hatchery-skel (0.6.0-1~steelhead+1) steelhead; urgency=medium
+
+  * Switched to bspwm from dk.
+
+ -- Will Elliott <troutcobbler@gmail.com>  Thu, 23 Feb 2023 00:27:25 -0700
+
+hatchery-skel (0.5.2-1~riogrande+1) riogrande; urgency=medium
+
+  * Updated rofi config for a better transition to bookworm.
+
+ -- Will Elliott <troutcobbler@gmail.com>  Tue, 24 Jan 2023 18:32:58 -0700
+
+hatchery-skel (0.5.1-1~riogrande+1) riogrande; urgency=medium
+
+  * Updated dk configs for 1.8.
+
+ -- Will Elliott <troutcobbler@gmail.com>  Wed, 18 Jan 2023 22:56:41 +0000
+
+hatchery-skel (0.5.0-1~riogrande+1) riogrande; urgency=medium
+
+  * Added powermenu confirmation dialogs.
+  * Disabled xautolock/slock by default.
+  * Cleaned up dkrc.
+
+ -- Will Elliott <troutcobbler@gmail.com>  Wed, 28 Dec 2022 18:17:55 -0700
+
+hatchery-skel (0.4.0-1~riogrande+1) riogrande; urgency=medium
+
+  * Organized dk workspaces better.
+
+ -- Will Elliott <troutcobbler@gmail.com>  Fri, 09 Dec 2022 17:39:16 -0700
+
+hatchery-skel (0.3.0-1~riogrande+1) riogrande; urgency=medium
+
+  * Added conky cheatsheet & swapped dmenu for rofi.
+
+ -- Will Elliott <troutcobbler@gmail.com>  Fri, 09 Dec 2022 16:07:22 -0700
+
+hatchery-skel (0.2.0-1~riogrande+1) riogrande; urgency=medium
+
+  * Removed fonts.
+
+ -- Will Elliott <troutcobbler@gmail.com>  Wed, 30 Nov 2022 19:28:28 -0700
+
+hatchery-skel (0.1.0-1~riogrande+1) riogrande; urgency=medium
+
+  * Initial Release.
+
+ -- Will Elliott <troutcobbler@gmail.com>  Tue, 29 Nov 2022 23:04:00 -0700
