@@ -1,3 +1,9 @@
+hatchery-skel (0.7.7) pecos; urgency=medium
+
+  * added the gtk3 stuff and commented out my monitor
+
+ -- Will Elliott <troutcobbler@gmail.com>  Fri, 21 Jul 2023 01:57:23 -0600
+
 hatchery-skel (0.7.6) pecos; urgency=medium
 
   * Swapped sway for hyprland. 
