@@ -8,7 +8,7 @@
 (defvar suspend_cmd  "eww-wayland -c $HOME/.config/eww-wayland update suspend_open=false &&
                       eww-wayland -c $HOME/.config/eww-wayland close suspend-confirm && systemctl suspend && swaylock -f -c 000000")
 (defvar reboot_cmd   "systemctl reboot")
-(defvar logout_cmd   "swaymsg exit")
+(defvar logout_cmd   "hyprctl dispatch exit")
 (defvar lock_cmd     "eww-wayland -c $HOME/.config/eww-wayland update powermenu_reveal=false && swaylock -f -c 000000")
 (defvar poweroff_cmd "systemctl poweroff")
 (defvar eww_cmd      "eww-wayland -c $HOME/.config/eww-wayland")
@@ -64,7 +64,7 @@
   (box :class "metric"
     (literal :content goober)))
 
-(deflisten goober "goober -wm sway")
+(deflisten goober "goober -wm hyprland")
 
 
 ;;;;;;;;;;;;;;;;;
@@ -292,7 +292,7 @@
 ;; calendar
 (defwindow calendar
   :monitor 0
-  :geometry (geometry :x "77px" :y "65%")
+  :geometry (geometry :x "27px" :y "65%")
   (calendar-widget))
 
 ;; suspend confirmation

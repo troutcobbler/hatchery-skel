@@ -1,10 +1,10 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: hatchery-skel
 Upstream-Contact: troutcobbler@gmail.com 
-Source: https://bitbucket.org/troutcobbler/hatchery-skel
+Source: https://github.com/troutcobbler/hatchery-skel
 
 Files: *
-Copyright: 2020-2022 troutcobbler@gmail.com
+Copyright: 2020-2023 troutcobbler@gmail.com
 License: MIT
 
 License: MIT

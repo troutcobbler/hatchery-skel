@@ -1,3 +1,9 @@
+hatchery-skel (0.7.6) pecos; urgency=medium
+
+  * Swapped sway for hyprland. 
+
+ -- Will Elliott <troutcobbler@gmail.com>  Fri, 21 Jul 2023 00:17:17 -0600
+
 hatchery-skel (0.7.5) pecos; urgency=medium
 
   * Rebuild for pecos. 
