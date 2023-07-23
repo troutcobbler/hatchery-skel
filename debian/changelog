@@ -1,3 +1,9 @@
+hatchery-skel (0.7.8) pecos; urgency=medium
+
+  * replaced lxappearance with nwg-look, tidied stuff up. 
+
+ -- Will Elliott <troutcobbler@gmail.com>  Sat, 22 Jul 2023 23:24:52 -0600
+
 hatchery-skel (0.7.7) pecos; urgency=medium
 
   * added the gtk3 stuff and commented out my monitor
