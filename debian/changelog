@@ -1,3 +1,9 @@
+hatchery-skel (0.7.9) pecos; urgency=medium
+
+  *  bumped version with new hyprland monitor and blurr stuff
+
+ -- Will Elliott <troutcobbler@gmail.com>  Wed, 30 Aug 2023 00:46:47 -0600
+
 hatchery-skel (0.7.8) pecos; urgency=medium
 
   * replaced lxappearance with nwg-look, tidied stuff up. 
