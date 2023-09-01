@@ -1,3 +1,9 @@
+hatchery-skel (0.7.10) pecos; urgency=medium
+
+  * swapped hyprland back for sway
+
+ -- Will Elliott <troutcobbler@gmail.com>  Fri, 01 Sep 2023 00:06:46 -0600
+
 hatchery-skel (0.7.9) pecos; urgency=medium
 
   *  bumped version with new hyprland monitor and blurr stuff
