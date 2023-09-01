@@ -64,7 +64,7 @@
   (box :class "metric"
     (literal :content goober)))
 
-(deflisten goober "goober -wm hyprland")
+(deflisten goober "goober -wm sway")
 
 
 ;;;;;;;;;;;;;;;;;

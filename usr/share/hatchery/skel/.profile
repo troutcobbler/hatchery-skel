@@ -34,5 +34,6 @@ fi
 # autostart X or Wayland on successful login to tty1
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
+  #exec sway
   #exec Hyprland
 fi
