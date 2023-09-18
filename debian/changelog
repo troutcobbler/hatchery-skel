@@ -1,3 +1,9 @@
+hatchery-skel (0.7.12) pecos; urgency=medium
+
+  * removed Hyprland from .profile
+
+ -- Will Elliott <troutcobbler@gmail.com>  Mon, 18 Sep 2023 17:17:50 -0600
+
 hatchery-skel (0.7.11) pecos; urgency=medium
 
   * restructured eww configs for hyprland & sway 
