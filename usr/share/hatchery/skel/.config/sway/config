@@ -260,6 +260,6 @@ for_window [app_id="xfce4-terminal"] move container to workspace 3, focus
 #exec wlsunset -T 4500
 #exec toggle-mon.sh && swaymsg workspace 1
 exec sleep 1 && conky -c ~/.config/conky/conky-wayland.conf
-exec eww-wayland -c $HOME/.config/eww-wayland open bar
+exec eww-wayland -c $HOME/.config/eww-sway open bar
 
 include /etc/sway/config.d/*
