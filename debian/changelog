@@ -1,3 +1,9 @@
+hatchery-skel (0.7.11) pecos; urgency=medium
+
+  * restructured eww configs for hyprland & sway 
+
+ -- Will Elliott <troutcobbler@gmail.com>  Mon, 18 Sep 2023 15:57:54 -0600
+
 hatchery-skel (0.7.10) pecos; urgency=medium
 
   * swapped hyprland back for sway
