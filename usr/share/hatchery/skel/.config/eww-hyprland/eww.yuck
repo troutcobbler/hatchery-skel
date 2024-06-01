@@ -5,13 +5,13 @@
 (defvar launcher_cmd "rofi_run.sh")
 (defvar network_cmd  "xfce4-terminal -e nmtui &")
 (defvar volume_cmd   "pavucontrol &")
-(defvar suspend_cmd  "eww-wayland -c $HOME/.config/eww-hyprland update suspend_open=false &&
-                      eww-wayland -c $HOME/.config/eww-hyprland close suspend-confirm && systemctl suspend && swaylock -f -c 000000")
+(defvar suspend_cmd  "eww -c $HOME/.config/eww-hyprland update suspend_open=false &&
+                      eww -c $HOME/.config/eww-hyprland close suspend-confirm && systemctl suspend && swaylock -f -c 000000")
 (defvar reboot_cmd   "systemctl reboot")
 (defvar logout_cmd   "hyprctl dispatch exit")
-(defvar lock_cmd     "eww-wayland -c $HOME/.config/eww-hyprland update powermenu_reveal=false && swaylock -f -c 000000")
+(defvar lock_cmd     "eww -c $HOME/.config/eww-hyprland update powermenu_reveal=false && swaylock -f -c 000000")
 (defvar poweroff_cmd "systemctl poweroff")
-(defvar eww_cmd      "eww-wayland -c $HOME/.config/eww-hyprland")
+(defvar eww_cmd      "eww -c $HOME/.config/eww-hyprland")
 
 
 ;;;;;;;;;;;;;

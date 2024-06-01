@@ -5,13 +5,13 @@
 (defvar launcher_cmd "rofi_run.sh")
 (defvar network_cmd  "xfce4-terminal -e nmtui &")
 (defvar volume_cmd   "pavucontrol &")
-(defvar suspend_cmd  "eww-wayland -c $HOME/.config/eww-sway update suspend_open=false &&
-                      eww-wayland -c $HOME/.config/eww-sway close suspend-confirm && systemctl suspend && swaylock -f -c 000000")
+(defvar suspend_cmd  "eww -c $HOME/.config/eww-sway update suspend_open=false &&
+                      eww -c $HOME/.config/eww-sway close suspend-confirm && systemctl suspend && swaylock -f -c 000000")
 (defvar reboot_cmd   "systemctl reboot")
 (defvar logout_cmd   "swaymsg exit")
-(defvar lock_cmd     "eww-wayland -c $HOME/.config/eww-sway update powermenu_reveal=false && swaylock -f -c 000000")
+(defvar lock_cmd     "eww -c $HOME/.config/eww-sway update powermenu_reveal=false && swaylock -f -c 000000")
 (defvar poweroff_cmd "systemctl poweroff")
-(defvar eww_cmd      "eww-wayland -c $HOME/.config/eww-sway")
+(defvar eww_cmd      "eww -c $HOME/.config/eww-sway")
 
 
 ;;;;;;;;;;;;;
