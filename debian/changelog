@@ -1,3 +1,9 @@
+hatchery-skel (0.7.14) pecos; urgency=medium
+
+  * trimmed things back for hyprland being in trixie/sid now 
+
+ -- Will Elliott <troutcobbler@gmail.com>  Thu, 01 Aug 2024 20:07:18 -0600
+
 hatchery-skel (0.7.13) pecos; urgency=medium
 
   * made necessary changes after removing eww-wayland

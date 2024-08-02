@@ -2,7 +2,7 @@
 ;; custom commands
 ;;;;;;;;;;;;;;;;;;
 
-(defvar launcher_cmd "rofi_run.sh")
+(defvar launcher_cmd "fuzzel")
 (defvar network_cmd  "xfce4-terminal -e nmtui &")
 (defvar volume_cmd   "pavucontrol &")
 (defvar suspend_cmd  "eww -c $HOME/.config/eww-hyprland update suspend_open=false &&
