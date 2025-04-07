@@ -4,9 +4,6 @@
 # reduce blue light with redshift
 #redshift -O 4500K
 
-# set wallpaper with feh
-~/.fehbg
-
 # use xautolock/slock for screensaver/locking
 #xautolock -time 10 -locker slock &
 

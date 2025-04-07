@@ -1,3 +1,9 @@
+hatchery-skel (0.8.0) gila; urgency=medium
+
+  * added awesome and removed a bunch of stuff for gila
+
+ -- Will Elliott <troutcobbler@gmail.com>  Mon, 07 Apr 2025 15:36:27 -0600
+
 hatchery-skel (0.7.14) pecos; urgency=medium
 
   * trimmed things back for hyprland being in trixie/sid now 

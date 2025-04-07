@@ -5,4 +5,4 @@ dbus-update-activation-environment --all
 [ -r ~/.xprofile ] && . ~/.xprofile
 
 # start desired window manager
-exec dk
+exec awesome
