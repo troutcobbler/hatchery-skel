@@ -1,3 +1,9 @@
+hatchery-skel (0.8.1) gila; urgency=medium
+
+  * fixed padding error for the last tag with multiple monitors
+
+ -- Will Elliott <troutcobbler@gmail.com>  Mon, 07 Apr 2025 20:29:48 -0600
+
 hatchery-skel (0.8.0) gila; urgency=medium
 
   * added awesome and removed a bunch of stuff for gila
