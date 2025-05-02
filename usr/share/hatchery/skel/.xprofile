@@ -6,6 +6,3 @@
 
 # use xautolock/slock for screensaver/locking
 #xautolock -time 10 -locker slock &
-
-# enable/disable conky cheatsheet
-conky &

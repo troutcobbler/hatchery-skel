@@ -1,3 +1,9 @@
+hatchery-skel (0.8.5) gila; urgency=medium
+
+  * removed conky from .xprofile and fixed the calendar 
+
+ -- Will Elliott <troutcobbler@gmail.com>  Fri, 02 May 2025 00:13:05 -0600
+
 hatchery-skel (0.8.4) gila; urgency=medium
 
   * added max_brightness variable for different backlights 
