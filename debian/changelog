@@ -1,3 +1,9 @@
+hatchery-skel (0.8.6) gila; urgency=medium
+
+  * updated rofi, some copyright info, and changed architecture to all
+
+ -- Will Elliott <troutcobbler@gmail.com>  Tue, 06 May 2025 19:48:08 -0600
+
 hatchery-skel (0.8.5) gila; urgency=medium
 
   * removed conky from .xprofile and fixed the calendar 

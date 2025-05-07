@@ -20,7 +20,7 @@
     normal-background:           @background;
     selected-normal-background:  @blue;
     separatorcolor:              @background;
-    spacing:                     2;
+    /**spacing:                     5;*/
     urgent-background:           @background;
     alternate-urgent-foreground: @foreground;
     selected-urgent-background:  @background;
@@ -30,7 +30,7 @@
 }
 window {
     border:     0;
-    padding:    5;
+    padding:    8;
 }
 mainbox {
     border:  0;
@@ -49,6 +49,7 @@ listview {
 }
 element {
     border: 0;
+    padding: 4;
 }
 element-text {
     background-color: inherit;

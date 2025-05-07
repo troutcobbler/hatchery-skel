@@ -7,6 +7,6 @@ Standards-Version: 4.5.1
 Homepage: https://github.com/troutcobbler/hatchery-skel
 
 Package: hatchery-skel
-Architecture: amd64
+Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Hatchery's default skel.
