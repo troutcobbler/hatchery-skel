@@ -1,3 +1,9 @@
+hatchery-skel (0.8.7) gila; urgency=medium
+
+  * switched from X11 to hyprland
+
+ -- Will Elliott <troutcobbler@gmail.com>  Wed, 14 Jan 2026 15:41:14 -0700
+
 hatchery-skel (0.8.6) gila; urgency=medium
 
   * updated rofi, some copyright info, and changed architecture to all
