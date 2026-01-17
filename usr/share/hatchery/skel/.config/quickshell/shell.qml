@@ -46,12 +46,19 @@ ShellRoot {
     property list<string> logoutCmd: ["hyprctl", "dispatch", "exit"]
     property list<string> lockCmd: ["swaylock", "-f", "-c", "000000"]
     property list<string> poweroffCmd: ["systemctl", "poweroff"]
+    property list<string> installCmd: ["sudo", "-EH", "calamares"]
 
     // Workstation type (set to true or false if it's a laptop)
     property bool laptop: false
 
     // Max Brightness setting (get from brightnessctl in terminal)
     property int maxBrightness: 255
+
+    // Wonky settings (conky replacement)
+    property string wonkyFontFamily: "hack"
+    property int wonkyFontSize: 16
+    property color wonkyColor: "#808080"
+
 
     // Bind the pipewire node so its volume will be tracked
     PwObjectTracker {
@@ -106,90 +113,90 @@ ShellRoot {
                 Row {
                     Text {
                         font {
-                            family: "hack"
-                            pixelSize: 16
+                            family: wonkyFontFamily
+                            pixelSize: wonkyFontSize
                         }
-                        color: "#808080"
+                        color: wonkyColor
                         text: "BASIC NAVIGATION"
                     }
                 }
                 Row {
                     Text {
                         font {
-                            family: "hack"
-                            pixelSize: 16
+                            family: wonkyFontFamily
+                            pixelSize: wonkyFontSize
                         }
-                        color: "#808080"
+                        color: wonkyColor
                         text: " "
                     }
                 }
                 Row {
                     Text {
                         font {
-                            family: "hack"
-                            pixelSize: 16
+                            family: wonkyFontFamily
+                            pixelSize: wonkyFontSize
                         }
-                        color: "#808080"
+                        color: wonkyColor
                         text: "ALT+P            run command"
                     }
                 }
                 Row {
                     Text {
                         font {
-                            family: "hack"
-                            pixelSize: 16
+                            family: wonkyFontFamily
+                            pixelSize: wonkyFontSize
                         }
-                        color: "#808080"
+                        color: wonkyColor
                         text: "ALT+SHIFT+ENTER  open terminal"
                     }
                 }
                 Row {
                     Text {
                         font {
-                            family: "hack"
-                            pixelSize: 16
+                            family: wonkyFontFamily
+                            pixelSize: wonkyFontSize
                         }
-                        color: "#808080"
+                        color: wonkyColor
                         text: "ALT+Q            close window"
                     }
                 }
                 Row {
                     Text {
                         font {
-                            family: "hack"
-                            pixelSize: 16
+                            family: wonkyFontFamily
+                            pixelSize: wonkyFontSize
                         }
-                        color: "#808080"
+                        color: wonkyColor
                         text: "ALT+1-6          switch between workspaces"
                     }
                 }
                 Row {
                     Text {
                         font {
-                            family: "hack"
-                            pixelSize: 16
+                            family: wonkyFontFamily
+                            pixelSize: wonkyFontSize
                         }
-                        color: "#808080"
+                        color: wonkyColor
                         text: "ALT+SHIFT+1-6    move window to workspace"
                     }
                 }
                 Row {
                     Text {
                         font {
-                            family: "hack"
-                            pixelSize: 16
+                            family: wonkyFontFamily
+                            pixelSize: wonkyFontSize
                         }
-                        color: "#808080"
+                        color: wonkyColor
                         text: "ALT+F12          show/hide this dialog"
                     }
                 }
                 Row {
                     Text {
                         font {
-                            family: "hack"
-                            pixelSize: 16
+                            family: wonkyFontFamily
+                            pixelSize: wonkyFontSize
                         }
-                        color: "#808080"
+                        color: wonkyColor
                         text: "ALT+SHIFT+Q      logout"
                     }
                 }
@@ -572,7 +579,14 @@ ShellRoot {
                 }
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: suspendPopup.visible ? suspendPopup.visible = false : suspendPopup.visible = true
+                    onClicked: {
+                        popupWindowText.text = "Suspend this computer?";
+                        popupWindowConfirm.text = "SUSPEND";
+                        popupWindowCancel.text = "CANCEL";
+                        popupWindowConfirm.color = color2;
+                        installCmd = suspendCmd;
+                        popupWindow.visible ? popupWindow.visible = false : popupWindow.visible = true;
+                    }
                 }
             }
 
@@ -588,7 +602,14 @@ ShellRoot {
                 }
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: rebootPopup.visible ? rebootPopup.visible = false : rebootPopup.visible = true
+                    onClicked: {
+                        popupWindowText.text = "Reboot this computer?";
+                        popupWindowConfirm.text = "REBOOT";
+                        popupWindowCancel.text = "CANCEL";
+                        popupWindowConfirm.color = color3;
+                        installCmd = rebootCmd;
+                        popupWindow.visible ? popupWindow.visible = false : popupWindow.visible = true;
+                    }
                 }
             }
 
@@ -604,7 +625,14 @@ ShellRoot {
                 }
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: logoutPopup.visible ? logoutPopup.visible = false : logoutPopup.visible = true
+                    onClicked: {
+                        popupWindowText.text = "Logout of this computer?";
+                        popupWindowConfirm.text = "LOGOUT";
+                        popupWindowCancel.text = "CANCEL";
+                        popupWindowConfirm.color = color5;
+                        installCmd = logoutCmd;
+                        popupWindow.visible ? popupWindow.visible = false : popupWindow.visible = true;
+                    }
                 }
             }
 
@@ -635,7 +663,14 @@ ShellRoot {
                 }
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: poweroffPopup.visible ? poweroffPopup.visible = false : poweroffPopup.visible = true
+                    onClicked: {
+                        popupWindowText.text = "Poweroff this computer?";
+                        popupWindowConfirm.text = "POWEROFF";
+                        popupWindowCancel.text = "CANCEL";
+                        popupWindowConfirm.color = color1;
+                        installCmd = poweroffCmd;
+                        popupWindow.visible ? popupWindow.visible = false : popupWindow.visible = true;
+                    }
                 }
             }
         }
@@ -661,6 +696,7 @@ ShellRoot {
                         pixelSize: fontSize
                     }
                     color: colorFg
+                    text: "Battery:"
                 }
             }
         }
@@ -686,6 +722,7 @@ ShellRoot {
                         pixelSize: fontSize
                     }
                     color: colorFg
+                    text: "Network:"
                 }
             }
             Process {
@@ -869,88 +906,9 @@ ShellRoot {
             }
         }
 
-        // Suspend
+        // Popup Window
         PopupWindow {
-            id: suspendPopup
-            anchor.window: bar
-            anchor.rect.x: screen.width / 2 - (width / 2)
-            anchor.rect.y: screen.height / 2 - (height / 2)
-            implicitWidth: 480
-            implicitHeight: 129
-            visible: false
-            color: colorBg
-
-            Text {
-                anchors.top: parent.top
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.topMargin: 25
-                color: colorFg
-                font {
-                    family: fontFamily
-                    pixelSize: fontSize
-                }
-                text: "Suspend this computer?"
-            }
-
-            Rectangle {
-                anchors.bottom: parent.bottom
-                anchors.left: parent.left
-                anchors.bottomMargin: 15
-                anchors.leftMargin: 35
-                width: 190
-                height: 35
-                radius: 5
-                color: color0
-
-                Text {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    color: colorFg
-                    font {
-                        family: fontFamily
-                        pixelSize: fontSize
-                    }
-                    text: "CANCEL"
-                }
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: suspendPopup.visible = false
-                }
-            }
-
-            Rectangle {
-                anchors.bottom: parent.bottom
-                anchors.right: parent.right
-                anchors.bottomMargin: 15
-                anchors.rightMargin: 35
-                width: 190
-                height: 35
-                radius: 5
-                color: color0
-
-                Text {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    color: color2
-                    font {
-                        family: fontFamily
-                        pixelSize: fontSize
-                    }
-                    text: "YES"
-                }
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        suspendPopup.visible = false;
-                        Quickshell.execDetached(suspendCmd);
-                    }
-                }
-            }
-        }
-
-        // Reboot
-        PopupWindow {
-            id: rebootPopup
+            id: popupWindow
             anchor.window: bar
             anchor.rect.x: screen.width / 2 - (width / 2)
             anchor.rect.y: screen.height / 2 - (height / 2)
@@ -960,6 +918,7 @@ ShellRoot {
             color: colorBg
 
             Text {
+                id: popupWindowText
                 anchors.top: parent.top
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.topMargin: 25
@@ -968,7 +927,7 @@ ShellRoot {
                     family: fontFamily
                     pixelSize: fontSize
                 }
-                text: "Reboot this computer?"
+                text: "Install now or explore the live-session?"
             }
 
             Rectangle {
@@ -982,6 +941,7 @@ ShellRoot {
                 color: color0
 
                 Text {
+                    id: popupWindowCancel
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.horizontalCenter: parent.horizontalCenter
                     color: colorFg
@@ -989,11 +949,11 @@ ShellRoot {
                         family: fontFamily
                         pixelSize: fontSize
                     }
-                    text: "CANCEL"
+                    text: "LIVE"
                 }
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: rebootPopup.visible = false
+                    onClicked: popupWindow.visible = false
                 }
             }
 
@@ -1008,59 +968,7 @@ ShellRoot {
                 color: color0
 
                 Text {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    color: color3
-                    font {
-                        family: fontFamily
-                        pixelSize: fontSize
-                    }
-                    text: "YES"
-                }
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        rebootPopup.visible = false;
-                        Quickshell.execDetached(rebootCmd);
-                    }
-                }
-            }
-        }
-
-        // Logout
-        PopupWindow {
-            id: logoutPopup
-            anchor.window: bar
-            anchor.rect.x: screen.width / 2 - (width / 2)
-            anchor.rect.y: screen.height / 2 - (height / 2)
-            implicitWidth: 480
-            implicitHeight: 120
-            visible: false
-            color: colorBg
-
-            Text {
-                anchors.top: parent.top
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.topMargin: 25
-                color: colorFg
-                font {
-                    family: fontFamily
-                    pixelSize: fontSize
-                }
-                text: "Logout of this computer?"
-            }
-
-            Rectangle {
-                anchors.bottom: parent.bottom
-                anchors.left: parent.left
-                anchors.bottomMargin: 15
-                anchors.leftMargin: 35
-                width: 190
-                height: 35
-                radius: 5
-                color: color0
-
-                Text {
+                    id: popupWindowConfirm
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.horizontalCenter: parent.horizontalCenter
                     color: colorFg
@@ -1068,118 +976,13 @@ ShellRoot {
                         family: fontFamily
                         pixelSize: fontSize
                     }
-                    text: "CANCEL"
-                }
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: logoutPopup.visible = false
-                }
-            }
-
-            Rectangle {
-                anchors.bottom: parent.bottom
-                anchors.right: parent.right
-                anchors.bottomMargin: 15
-                anchors.rightMargin: 35
-                width: 190
-                height: 35
-                radius: 5
-                color: color0
-
-                Text {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    color: color5
-                    font {
-                        family: fontFamily
-                        pixelSize: fontSize
-                    }
-                    text: "YES"
+                    text: "INSTALL"
                 }
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        logoutPopup.visible = false;
-                        Quickshell.execDetached(logoutCmd);
-                    }
-                }
-            }
-        }
-
-        // Poweroff
-        PopupWindow {
-            id: poweroffPopup
-            anchor.window: bar
-            anchor.rect.x: screen.width / 2 - (width / 2)
-            anchor.rect.y: screen.height / 2 - (height / 2)
-            implicitWidth: 480
-            implicitHeight: 120
-            visible: false
-            color: colorBg
-
-            Text {
-                anchors.top: parent.top
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.topMargin: 25
-                color: colorFg
-                font {
-                    family: fontFamily
-                    pixelSize: fontSize
-                }
-                text: "Poweroff this computer?"
-            }
-
-            Rectangle {
-                anchors.bottom: parent.bottom
-                anchors.left: parent.left
-                anchors.bottomMargin: 15
-                anchors.leftMargin: 35
-                width: 190
-                height: 35
-                radius: 5
-                color: color0
-
-                Text {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    color: colorFg
-                    font {
-                        family: fontFamily
-                        pixelSize: fontSize
-                    }
-                    text: "CANCEL"
-                }
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: poweroffPopup.visible = false
-                }
-            }
-
-            Rectangle {
-                anchors.bottom: parent.bottom
-                anchors.right: parent.right
-                anchors.bottomMargin: 15
-                anchors.rightMargin: 35
-                width: 190
-                height: 35
-                radius: 5
-                color: color0
-
-                Text {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    color: color1
-                    font {
-                        family: fontFamily
-                        pixelSize: fontSize
-                    }
-                    text: "YES"
-                }
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        poweroffPopup.visible = false;
-                        Quickshell.execDetached(poweroffCmd);
+                        popupWindow.visible = false;
+                        Quickshell.execDetached(installCmd);
                     }
                 }
             }
