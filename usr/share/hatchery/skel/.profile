@@ -31,7 +31,7 @@ if [ -d "/sbin" ] ; then
     PATH="/sbin:$PATH"
 fi
 
-# autostart hyprland on successful login to tty1
+# autostart compositor on successful login to tty1
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec hyprland
+    exec mango
 fi
