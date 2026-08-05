@@ -42,7 +42,7 @@ ShellRoot {
     property list<string> volumeCmd: ["pavucontrol"]
     property list<string> suspendCmd: ["sh", "-c", `systemctl suspend && swaylock -f -c 000000`]
     property list<string> rebootCmd: ["systemctl", "reboot"]
-    property list<string> logoutCmd: ["mmsg", "-d", "quit"]
+    property list<string> logoutCmd: ["mmsg", "dispatch", "quit"]
     property list<string> lockCmd: ["swaylock", "-f", "-c", "000000"]
     property list<string> poweroffCmd: ["systemctl", "poweroff"]
     property list<string> installCmd: ["sudo", "-EH", "calamares"]
@@ -242,19 +242,11 @@ ShellRoot {
         Process {
             id: mmsg
             running: true
-            command: ["mmsg", "-w"]
+            command: ["mmsg", "watch", "all-tags"]
 
             stdout: SplitParser {
                 onRead: line => {
-                    function reverseString(str) {
-                        let charArray = str.split('');
-                        return charArray.reverse();
-                    }
-
-                    if (line.match(/^(\S+)\s+tags\s+([01]+)\s+([01]+)\s+([01]+)$/)) {
-                        workspaces.occupied = reverseString(line.split(/\s+/)[2]);
-                        workspaces.active = reverseString(line.split(/\s+/)[3]);
-                    }
+                    workspaces.tags = JSON.parse(line);
                 }
             }
         }
@@ -277,19 +269,18 @@ ShellRoot {
                 Repeater {
                     id: workspaces
                     model: 6
-                    property list<string> active: ["0"]
-                    property list<string> occupied: ["0"]
+                    property var tags: {"all_tags":[{"tags":[{"is_active":false,"client_count":0},{"is_active":false,"client_count":0},{"is_active":false,"client_count":0},{"is_active":false,"client_count":0},{"is_active":false,"client_count":0},{"is_active":false,"client_count":0}]}]}
                     Text {
                         anchors.horizontalCenter: parent.horizontalCenter
                         text: icons[index]
-                        color: workspaces.active[index] == 1 ? colorFg : (workspaces.occupied[index] == 1 ? colorFg : color8)
+                        color: workspaces.tags.all_tags[0].tags[index].is_active ? colorFg : (workspaces.tags.all_tags[0].tags[index].client_count > 0 ? colorFg : color8)
                         font {
                             family: fontFamily
                             pixelSize: fontSize
                         }
                         MouseArea {
                             anchors.fill: parent
-                            onClicked: Quickshell.execDetached(["mmsg", "-s", "-t", index + 1])
+                            onClicked: Quickshell.execDetached(["mmsg", "dispatch", `view,${index + 1},0`])
                         }
                     }
                 }
