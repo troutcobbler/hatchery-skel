@@ -1,3 +1,9 @@
+hatchery-skel (0.8.13) gila; urgency=medium
+
+  * updated mango config for 0.17.2
+
+ -- Will Elliott <troutcobbler@gmail.com>  Fri, 18 Sep 2026 01:19:30 -0600
+
 hatchery-skel (0.8.12) gila; urgency=medium
 
   * updated mango & quickshell for the new json mmsg
