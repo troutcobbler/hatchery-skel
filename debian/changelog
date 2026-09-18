@@ -1,3 +1,9 @@
+hatchery-skel (0.8.14) gila; urgency=medium
+
+  * bumped version 
+
+ -- Will Elliott <troutcobbler@gmail.com>  Fri, 18 Sep 2026 01:39:45 -0600
+
 hatchery-skel (0.8.13) gila; urgency=medium
 
   * updated mango config for 0.17.2
